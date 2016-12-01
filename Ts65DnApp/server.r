@@ -6,18 +6,20 @@ library(reshape)
 library(reshape2)
 
 
-#Load All Data
+#Load All Data From Local Directory
 #RawData <- read.csv("../RawData.csv")
 #BehaviorData <- read.csv("../BehaviorData.csv")
 #GenotypeData <- read.csv("../GenotypeData.csv")
 #ClassData <- read.csv("../ClassData.csv")
 #TreatmentData <- read.csv("../TreatmentData.csv")
+
+#Load Data From Web
 library(RCurl)
-RawData <- read.csv(url("http://www.colbyford.com/research/RawData.csv"))
-BehaviorData <- read.csv(url("http://www.colbyford.com/research/BehaviorData.csv"))
-GenotypeData <- read.csv(url("http://www.colbyford.com/research/GenotypeData.csv"))
-ClassData <- read.csv(url("http://www.colbyford.com/research/ClassData.csv"))
-TreatmentData <- read.csv(url("http://www.colbyford.com/research/TreatmentData.csv"))
+RawData <- read.csv(url("https://raw.githubusercontent.com/colbytylerford/Ts65Dn-ShinyApp/master/RawData.csv"))
+BehaviorData <- read.csv(url("https://raw.githubusercontent.com/colbytylerford/Ts65Dn-ShinyApp/master/BehaviorData.csv"))
+GenotypeData <- read.csv(url("https://raw.githubusercontent.com/colbytylerford/Ts65Dn-ShinyApp/master/GenotypeData.csv"))
+ClassData <- read.csv(url("https://raw.githubusercontent.com/colbytylerford/Ts65Dn-ShinyApp/master/ClassData.csv"))
+TreatmentData <- read.csv(url("https://raw.githubusercontent.com/colbytylerford/Ts65Dn-ShinyApp/master/TreatmentData.csv"))
 
 datasets <- c("ClassData","BehaviorData","GenotypeData","TreatmentData","RawData")
 assumptions <- c("Normal","Not Normal")
